@@ -1,0 +1,99 @@
+<head>
+  <title>Rock Paper Scissors</title>
+  <p class="text-center">
+  	<img src="/images/rock_paper_scissors.jpg">
+  </p>
+</head>
+ 
+<body>
+    <header>
+    </header>
+</body>
+
+<template name="weaponform">
+	<div class="container-fluid">
+		<h2 class="form-signin-heading">
+			<p class="text-center">
+				Select a hand
+			</p>
+		</h2>
+	    <form class="new-move">
+		    <p class="text-center">
+			   	<select>
+			   		<option value="rock">rock</option>
+			   		<option value="paper">paper</option>
+			   		<option value="scissors">scissors</option>
+			    </select>
+				<input type="submit" name="select" value="Select" class="btn btn-large btn-primary"/>
+			</p>
+		</form>
+	</div>
+</template>
+
+<template name="home">
+	<div class="container-fluid">
+		<div class="row">
+			<h2 class="form-signin-heading">
+				<p class="text-center">
+					Instructions:
+				</p>
+			</h2>
+			<div class=".col-xs-6 .col-sm-4">
+				<p class="text-center">
+				To play, select a player, please do not select the same player as your opponent.
+				<br/>
+				Select a hand, either Rock, Paper or Scissors.
+				<br/>
+				Rock beats Scissors, Paper beats Rock, Scissors beats Paper.
+				<br/>
+				After both players have selected a hand, the winner will be displayed.
+				</p>
+			</div>
+			<form class="form-signin">
+				<h2 class="form-signin-heading">
+				<p class="text-center">Please select a player</p>
+				</h2>
+				<p class="text-center">
+				<input type="button" class="player_1_button btn btn-large btn-primary"
+				value="Player 1"/>
+				<input type="button" class="player_2_button btn btn-large btn-primary"
+				value="Player 2"/>
+				</p>
+			</form>
+		</div>
+	</div>
+</template>
+
+<template name="outcome">
+	<div class="container">
+		<p class="text-center">
+		Outcome will appear below when all players have selected their hands.
+		<h2 class="form-signin-heading">{{outcome.player}}</h2>
+		<h2> Winning Hand:</h2>
+		{{#if winning_rock}}
+  			<img src="/images/rock.jpg">
+		{{/if}}
+		{{#if winning_paper}}
+		  <img src="/images/paper.jpg">
+		{{/if}}
+		{{#if winning_scissors}}
+  			<img src="/images/scissors.jpg">
+		{{/if}}
+		<h2> Losing Hand:</h2>
+		{{#if losing_rock}}
+  			<img src="/images/rock.jpg">
+		{{/if}}
+		{{#if losing_paper}}
+		  <img src="/images/paper.jpg">
+		{{/if}}
+		{{#if losing_scissors}}
+  			<img src="/images/scissors.jpg">
+		{{/if}}
+		</p>
+	</div>
+	<div>
+	<p class="text-center">
+		<input type="button" class="play_again btn btn-large btn-primary" value="Play Again!"/>
+	</p>
+	</div>
+</template>
